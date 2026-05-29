@@ -92,12 +92,6 @@ function Hero() {
         </div>
       </div>
 
-      {/* Slider dots */}
-      <div className="absolute bottom-5 left-0 right-0 flex justify-center gap-2 z-10">
-        <span className="w-5 h-1.5 rounded-full bg-[#1B2B4B]" />
-        <span className="w-1.5 h-1.5 rounded-full bg-[#aaa]" />
-        <span className="w-1.5 h-1.5 rounded-full bg-[#aaa]" />
-      </div>
     </section>
   );
 }
