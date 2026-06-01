@@ -39,13 +39,13 @@ export default function AboutPage() {
           </div>
 
           {/* Centered title + features */}
-          <div className="flex flex-col items-center px-6 pt-14 pb-16">
+          <div className="flex flex-col items-center px-4 md:px-6 pt-10 md:pt-14 pb-12 md:pb-16">
             <h1 className="text-[32px] md:text-[36px] font-bold text-[#1B2B4B] leading-tight mb-3 text-center" style={{ fontFamily: "'Noto Serif KR', serif" }}>
               청담사주작명원 소개
             </h1>
             <p className="text-[15px] text-[#888] mb-14 text-center">삶의 흐름을 함께 보는 정통 상담공간</p>
 
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 w-full max-w-[1440px] border-b pb-20 border-[#e8e8e8]">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 w-full max-w-[1440px] border-b pb-12 md:pb-20 border-[#e8e8e8]">
               {features.map((f) => (
                 <div key={f.label} className="flex flex-col items-center gap-1">
                   <div className="w-20 h-20 rounded-2xl  flex items-center justify-center  transition-colors">{f.icon}</div>
@@ -58,11 +58,11 @@ export default function AboutPage() {
 
         {/* ── 3. Greeting ── */}
         <section className="w-full bg-white pb-16">
-          <div className="max-w-7xl mx-auto px-6 flex flex-col lg:flex-row gap-12 lg:gap-20 items-center">
+          <div className="max-w-7xl mx-auto px-4 md:px-6 flex flex-col lg:flex-row gap-10 lg:gap-20 items-center">
             {/* Text */}
             <div className="flex-1">
               <p className="text-[12px] text-[#C9A84C] tracking-widest uppercase font-medium mb-3">Greeting</p>
-              <h2 className="text-[24px] font-bold text-[#1B2B4B] mb-10" style={{ fontFamily: "'Noto Serif KR', serif" }}>
+              <h2 className="text-[22px] md:text-[24px] font-bold text-[#1B2B4B] mb-6 md:mb-10" style={{ fontFamily: "'Noto Serif KR', serif" }}>
                 인사말
               </h2>
               <p className="text-[15px] text-[#333] leading-relaxed mb-5" style={{ fontFamily: "'Noto Serif KR', serif" }}>
@@ -117,7 +117,7 @@ export default function AboutPage() {
 
         {/* ── 5. CTA (combined) ── */}
         <section className="w-full bg-[#1B2B4B] py-16">
-          <div className="max-w-7xl mx-auto px-6 flex flex-col lg:flex-row gap-12 lg:gap-24 items-start">
+          <div className="max-w-7xl mx-auto px-4 md:px-6 flex flex-col lg:flex-row gap-10 lg:gap-24 items-start">
             {/* Left: description */}
             <div className="lg:w-[48%] shrink-0">
               <h2 className="text-[22px] font-bold text-white leading-snug mb-6" style={{ fontFamily: "'Noto Serif KR', serif" }}>

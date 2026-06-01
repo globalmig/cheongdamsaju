@@ -43,10 +43,10 @@ export default function ServiceDetail({
       <main className="flex-1">
 
         {/* Hero */}
-        <section className="relative w-full overflow-hidden bg-[#1B2B4B] py-20">
+        <section className="relative w-full overflow-hidden bg-[#1B2B4B] py-14 md:py-20">
           <Image src="/images/청담사주작명원 정보1.jpg" alt="" fill className="object-cover object-center" />
           <div className="absolute inset-0 bg-[#1B2B4B]/75" />
-          <div className="relative z-10 max-w-[1280px] mx-auto px-6">
+          <div className="relative z-10 max-w-[1280px] mx-auto px-4 md:px-6">
             <div className="flex items-center gap-2 text-[12px] text-white/40 mb-6">
               <Link href="/services" className="hover:text-white/70 transition-colors">상담 분야</Link>
               <span>›</span>
@@ -56,7 +56,7 @@ export default function ServiceDetail({
               {data.subtitle}
             </p>
             <h1
-              className="text-[40px] font-bold text-white leading-tight mb-5"
+              className="text-[26px] sm:text-[32px] md:text-[40px] font-bold text-white leading-tight mb-5"
               style={{ fontFamily: "'Noto Serif KR', serif" }}
             >
               {data.title}
@@ -66,15 +66,15 @@ export default function ServiceDetail({
         </section>
 
         {/* Content */}
-        <section className="w-full bg-[#F8F7F5] py-14">
-          <div className="max-w-[1280px] mx-auto px-6">
+        <section className="w-full bg-[#F8F7F5] py-10 md:py-14">
+          <div className="max-w-[1280px] mx-auto px-4 md:px-6">
             <div className="flex flex-col lg:flex-row gap-8">
 
               {/* Main */}
               <div className="flex-1 min-w-0">
 
                 {/* Description */}
-                <div className="bg-white border border-[#e8e8e8] p-8 mb-5">
+                <div className="bg-white border border-[#e8e8e8] p-5 md:p-8 mb-5">
                   <div className="flex items-center gap-3 mb-6">
                     <div className="w-[3px] h-5 bg-[#C9A84C] rounded-full shrink-0" />
                     <h2
@@ -94,7 +94,7 @@ export default function ServiceDetail({
                 </div>
 
                 {/* Items */}
-                <div className="bg-white border border-[#e8e8e8] p-8 mb-5">
+<div className="bg-white border border-[#e8e8e8] p-5 md:p-8 mb-5">
                   <div className="flex items-center gap-3 mb-6">
                     <div className="w-[3px] h-5 bg-[#C9A84C] rounded-full shrink-0" />
                     <h2
@@ -122,7 +122,7 @@ export default function ServiceDetail({
                 </div>
 
                 {/* CTA */}
-                <div className="bg-[#1B2B4B] p-8 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-5">
+                <div className="bg-[#1B2B4B] p-5 md:p-8 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-5">
                   <div>
                     <p className="text-[#C9A84C] text-[11px] tracking-[0.15em] uppercase font-medium mb-2">
                       지금 바로 예약하세요

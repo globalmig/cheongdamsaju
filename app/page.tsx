@@ -56,36 +56,39 @@ const heroIcons = [
 // ── Hero ──────────────────────────────────────────────────────────────────────
 function Hero() {
   return (
-    <section className="relative w-full min-h-140 overflow-hidden max-w-[2880px] mx-auto">
+    <section className="relative w-full min-h-[420px] md:min-h-140 overflow-hidden max-w-[2880px] mx-auto">
       {/* Full-section background image */}
       <Image src="/images/ceo/사주_ceo3.png" alt="청담사주 작명원 원장" fill sizes="100vw" className="object-cover object-center" preload />
 
+      {/* Mobile overlay for readability */}
+      <div className="absolute inset-0 bg-white/80 md:hidden" />
+
       {/* Content */}
-      <div className="relative z-10 max-w-7xl mx-auto flex min-h-140">
+      <div className="relative z-10 max-w-7xl mx-auto flex min-h-[420px] md:min-h-140">
         {/* Left content */}
-        <div className="w-[46%] shrink-0 flex flex-col justify-center py-16 px-8 lg:px-16">
-          <p className="text-[14px] text-[#444] mb-4 tracking-wide">삶의 흐름을 함께 보는</p>
-          <h1 className="text-[48px] font-bold text-[#1B2B4B] leading-tight mb-5" style={{ fontFamily: "'Noto Serif KR', serif" }}>
+        <div className="w-full md:w-[46%] shrink-0 flex flex-col justify-center py-10 md:py-16 px-6 md:px-8 lg:px-16">
+          <p className="text-[13px] md:text-[14px] text-[#444] mb-3 md:mb-4 tracking-wide">삶의 흐름을 함께 보는</p>
+          <h1 className="text-[28px] sm:text-[36px] md:text-[48px] font-bold text-[#1B2B4B] leading-tight mb-4 md:mb-5" style={{ fontFamily: "'Noto Serif KR', serif" }}>
             정통 사주·작명 상담
           </h1>
-          <p className="text-[14px] text-[#444] leading-relaxed mb-10 max-w-90">
+          <p className="text-[13px] md:text-[14px] text-[#444] leading-relaxed mb-8 md:mb-10 max-w-90">
             사주팔자를 바탕으로 인생의 흐름을 분석하고,
             <br />더 나은 선택과 방향을 함께 제시해드립니다.
           </p>
 
           {/* Circular icon strip */}
-          <div className="flex items-center gap-6 mb-10">
+          <div className="flex items-center gap-3 sm:gap-5 md:gap-6 mb-8 md:mb-10 flex-wrap">
             {heroIcons.map((item) => (
               <div key={item.label} className="flex flex-col items-center gap-2">
-                <div className="w-13 h-13 rounded-full border border-[#aaa] flex items-center justify-center hover:border-[#1B2B4B] transition-colors bg-white/30 backdrop-blur-sm">{item.icon}</div>
-                <span className="text-[11px] text-[#333] font-medium">{item.label}</span>
+                <div className="w-11 h-11 md:w-13 md:h-13 rounded-full border border-[#aaa] flex items-center justify-center hover:border-[#1B2B4B] transition-colors bg-white/30 backdrop-blur-sm">{item.icon}</div>
+                <span className="text-[10px] md:text-[11px] text-[#333] font-medium">{item.label}</span>
               </div>
             ))}
           </div>
 
           {/* CTA button */}
           <div>
-            <Link href="/booking" className="inline-flex items-center gap-2 bg-[#1B2B4B] text-white text-[14px] font-medium px-7 py-3.5 hover:bg-[#152240] transition-colors">
+            <Link href="/booking" className="inline-flex items-center gap-2 bg-[#1B2B4B] text-white text-[13px] md:text-[14px] font-medium px-6 md:px-7 py-3 md:py-3.5 hover:bg-[#152240] transition-colors">
               상담 예약하기 &nbsp;→
             </Link>
           </div>
@@ -153,24 +156,31 @@ const serviceNavItems = [
 function ServiceNav() {
   return (
     <section className="w-full bg-white border-t border-b border-[#e8e8e8]">
-      <div className="max-w-[1280px] mx-auto px-6">
+      <div className="max-w-[1280px] mx-auto px-4 md:px-6">
         <div className="grid grid-cols-2 md:grid-cols-4">
-          {serviceNavItems.map((item, i) => (
-            <Link
-              key={item.href}
-              href={item.href}
-              className={`group flex items-start gap-4 py-8 px-6 transition-colors hover:bg-[#F8F7F5] ${i < serviceNavItems.length - 1 ? "border-r border-[#e8e8e8]" : ""}`}
-            >
-              <div className="w-14 h-14 rounded-full border border-[#e8e8e8] flex items-center justify-center shrink-0 group-hover:border-[#C9A84C] transition-colors">{item.icon}</div>
-              <div className="flex-1 min-w-0">
-                <p className="text-[14px] font-bold text-[#1B2B4B] mb-1.5" style={{ fontFamily: "'Noto Serif KR', serif" }}>
-                  {item.title}
-                </p>
-                <p className="text-[12px] text-[#888] leading-relaxed whitespace-pre-line mb-3">{item.desc}</p>
-                <span className="text-[12px] text-[#C9A84C] font-medium">자세히 보기 →</span>
-              </div>
-            </Link>
-          ))}
+          {serviceNavItems.map((item, i) => {
+            const isLast = i === serviceNavItems.length - 1;
+            const isOdd = i % 2 === 1;
+            const isFirstRow = i < 2;
+            const borderR = !isLast ? (isOdd ? "md:border-r" : "border-r") : "";
+            const borderB = isFirstRow ? "border-b md:border-b-0" : "";
+            return (
+              <Link
+                key={item.href}
+                href={item.href}
+                className={`group flex items-start gap-3 md:gap-4 py-6 md:py-8 px-3 md:px-6 transition-colors hover:bg-[#F8F7F5] border-[#e8e8e8] ${borderR} ${borderB}`}
+              >
+                <div className="w-11 h-11 md:w-14 md:h-14 rounded-full border border-[#e8e8e8] flex items-center justify-center shrink-0 group-hover:border-[#C9A84C] transition-colors">{item.icon}</div>
+                <div className="flex-1 min-w-0">
+                  <p className="text-[13px] md:text-[14px] font-bold text-[#1B2B4B] mb-1 md:mb-1.5" style={{ fontFamily: "'Noto Serif KR', serif" }}>
+                    {item.title}
+                  </p>
+                  <p className="hidden sm:block text-[11px] md:text-[12px] text-[#888] leading-relaxed whitespace-pre-line mb-2 md:mb-3">{item.desc}</p>
+                  <span className="text-[11px] md:text-[12px] text-[#C9A84C] font-medium">자세히 보기 →</span>
+                </div>
+              </Link>
+            );
+          })}
         </div>
       </div>
     </section>
@@ -200,29 +210,29 @@ const infoList = ["사주·궁합·재물운·작명·사업운 전문", "안전
 
 function Gallery() {
   return (
-    <section className="w-full bg-white border-t py-16 border-[#e8e8e8]">
-      <div className="max-w-[1280px] mx-auto flex gap-4 ">
+    <section className="w-full bg-white border-t py-10 md:py-16 border-[#e8e8e8]">
+      <div className="max-w-[1280px] mx-auto px-4 md:px-6 flex flex-col lg:flex-row gap-6">
         {/* 3 image columns */}
-        <div className="flex flex-1 gap-4">
+        <div className="flex flex-col sm:flex-row flex-1 gap-4">
           {galleryItems.map((item, i) => (
-            <div key={i} className="flex-1 flex flex-col border-r shadow rounded-2xl border-[#e8e8e8]">
+            <div key={i} className="flex-1 flex flex-col border shadow rounded-2xl border-[#e8e8e8]">
               {/* Image */}
-              <div className="relative w-full rounded-2xl" style={{ aspectRatio: "4/3" }}>
+              <div className="relative w-full rounded-t-2xl overflow-hidden" style={{ aspectRatio: "4/3" }}>
                 <Image src={item.src} alt={item.title} fill className="object-cover" />
               </div>
               {/* Caption */}
               <div className="px-5 py-5 flex-1">
-                <h4 className="text-[14.5px] font-bold text-[#1B2B4B] mb-2" style={{ fontFamily: "'Noto Serif KR', serif" }}>
+                <h4 className="text-[14px] md:text-[14.5px] font-bold text-[#1B2B4B] mb-2" style={{ fontFamily: "'Noto Serif KR', serif" }}>
                   {item.title}
                 </h4>
-                <p className="text-[12.5px] text-[#666] leading-relaxed">{item.desc}</p>
+                <p className="text-[12px] md:text-[12.5px] text-[#666] leading-relaxed">{item.desc}</p>
               </div>
             </div>
           ))}
         </div>
 
         {/* Navy info card */}
-        <div className="w-67.5 shrink-0 rounded-2xl bg-[#1B2B4B] px-7 py-10 flex flex-col justify-center">
+        <div className="w-full lg:w-67.5 shrink-0 rounded-2xl bg-[#1B2B4B] px-7 py-10 flex flex-col justify-center">
           <h3 className="text-[19px] font-bold text-white mb-4" style={{ fontFamily: "'Noto Serif KR', serif" }}>
             청담사주작명원
           </h3>

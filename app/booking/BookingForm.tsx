@@ -80,7 +80,7 @@ export default function BookingForm() {
   return (
     <div className="bg-white border border-[#e8e8e8]">
       {/* Step indicators */}
-      <div className="border-b border-[#e8e8e8] px-8 py-5">
+      <div className="border-b border-[#e8e8e8] px-4 sm:px-8 py-4 sm:py-5">
         <div className="flex items-center gap-0">
           {STEPS.map((label, i) => (
             <div key={label} className="flex items-center flex-1 last:flex-none">
@@ -118,7 +118,7 @@ export default function BookingForm() {
         </div>
       </div>
 
-      <div className="px-8 py-10">
+      <div className="px-4 sm:px-8 py-8 sm:py-10">
         {/* Step 0: 상담 종류 */}
         {step === 0 && (
           <div>

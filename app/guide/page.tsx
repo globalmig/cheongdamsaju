@@ -120,7 +120,7 @@ export default function GuidePage() {
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-px bg-[#e8e8e8]">
               {guideItems.map((g) => (
-                <div key={g.title} className="bg-white px-7 py-10">
+                <div key={g.title} className="bg-white px-5 md:px-7 py-8 md:py-10">
                   <div className="mb-5">{g.icon}</div>
                   <h3
                     className="text-[17px] font-bold text-[#1B2B4B] mb-3"
@@ -150,7 +150,7 @@ export default function GuidePage() {
 
             <div className="flex flex-col lg:flex-row gap-0 bg-white border border-[#e8e8e8] divide-y lg:divide-y-0 lg:divide-x divide-[#e8e8e8]">
               {consultInfo.map((col) => (
-                <div key={col.title} className="flex-1 px-8 py-10">
+                <div key={col.title} className="flex-1 px-5 md:px-8 py-8 md:py-10">
                   <h3
                     className="text-[16px] font-bold text-[#1B2B4B] mb-6 pb-4 border-b border-[#e8e8e8]"
                     style={{ fontFamily: "'Noto Serif KR', serif" }}

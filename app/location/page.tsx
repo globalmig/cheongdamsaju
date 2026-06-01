@@ -67,8 +67,8 @@ export default function LocationPage() {
         </section>
 
         {/* Map + basic info */}
-        <section className="w-full bg-white py-16">
-          <div className="max-w-[1280px] mx-auto px-6">
+        <section className="w-full bg-white py-10 md:py-16">
+          <div className="max-w-[1280px] mx-auto px-4 md:px-6">
             <div className="flex flex-col lg:flex-row gap-8">
               {/* Map */}
               <div className="flex-1 min-h-[400px] relative overflow-hidden">
@@ -171,9 +171,9 @@ export default function LocationPage() {
         </section>
 
         {/* Transportation */}
-        <section className="w-full bg-[#F8F7F5] py-16">
-          <div className="max-w-[1280px] mx-auto px-6">
-            <div className="text-center mb-12">
+        <section className="w-full bg-[#F8F7F5] py-10 md:py-16">
+          <div className="max-w-[1280px] mx-auto px-4 md:px-6">
+            <div className="text-center mb-10 md:mb-12">
               <p className="text-[12px] text-[#C9A84C] tracking-widest uppercase font-medium mb-3">How to get here</p>
               <h2 className="text-[28px] font-bold text-[#1B2B4B]" style={{ fontFamily: "'Noto Serif KR', serif" }}>
                 교통 안내
@@ -204,22 +204,22 @@ export default function LocationPage() {
         </section>
 
         {/* Exterior photo */}
-        <section className="w-full bg-white py-16">
-          <div className="max-w-[1280px] mx-auto px-6">
-            <div className="text-center mb-10">
+        <section className="w-full bg-white py-10 md:py-16">
+          <div className="max-w-[1280px] mx-auto px-4 md:px-6">
+            <div className="text-center mb-8 md:mb-10">
               <h2 className="text-[24px] font-bold text-[#1B2B4B]" style={{ fontFamily: "'Noto Serif KR', serif" }}>
                 건물 외관
               </h2>
               <p className="text-[13px] text-[#888] mt-2">아래 이미지를 참고하여 방문해 주세요</p>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-              <div className="h-120 relative flex items-end p-5 overflow-hidden">
+              <div className="h-64 md:h-120 relative flex items-end p-5 overflow-hidden">
                 <Image src="/images/청담사주작명원 외부1.jpg" alt="건물 정문" fill className="object-cover object-center" />
                 <div className="relative z-10 bg-[#1B2B4B]/85 px-3 py-2">
                   <p className="text-white text-[13px] font-medium">건물 정문</p>
                 </div>
               </div>
-              <div className="h-120 relative flex items-end p-5 overflow-hidden">
+              <div className="h-64 md:h-120 relative flex items-end p-5 overflow-hidden">
                 <Image src="/images/청담사주작명원 외부3.jpg" alt="간판 / 안내" fill className="object-cover object-center" />
                 <div className="relative z-10 bg-[#1B2B4B]/85 px-3 py-2">
                   <p className="text-white text-[13px] font-medium">간판 / 안내</p>
