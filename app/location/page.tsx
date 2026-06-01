@@ -20,10 +20,7 @@ const transportInfo = [
         <path d="M6 6h8M6 9h8" stroke="#1B2B4B" strokeWidth="1.2" strokeLinecap="round" />
       </svg>
     ),
-    details: [
-      "3호선(모노레일) 북구청역 하차 후 버스·택시 이용",
-      "1호선 대구역 하차 후 버스 환승",
-    ],
+    details: ["3호선(모노레일) 북구청역 하차 후 버스·택시 이용", "1호선 대구역 하차 후 버스 환승"],
   },
   {
     type: "버스",
@@ -36,10 +33,7 @@ const transportInfo = [
         <path d="M10 3v5" stroke="#1B2B4B" strokeWidth="1.2" />
       </svg>
     ),
-    details: [
-      "간선: 101·300·349·523·708·730번 침산남로 정류장 하차",
-      "지선: 북구3·북구4번 침산남로 정류장 하차",
-    ],
+    details: ["간선: 101·300·349·523·708·730번 침산남로 정류장 하차", "지선: 북구3·북구4번 침산남로 정류장 하차"],
   },
   {
     type: "자가용",
@@ -51,10 +45,7 @@ const transportInfo = [
         <circle cx="14.5" cy="16" r="1.5" fill="#1B2B4B" />
       </svg>
     ),
-    details: [
-      "내비 목적지: '침산태왕리더스' 또는 '침산남로 80' 검색",
-      "건물 내 주차장 이용 / 인근 공영주차장 이용 가능",
-    ],
+    details: ["내비 목적지: '침산태왕리더스' 또는 '침산남로 80' 검색", "건물 내 주차장 이용 / 인근 공영주차장 이용 가능"],
   },
 ];
 
@@ -65,13 +56,10 @@ export default function LocationPage() {
       <main className="flex-1">
         {/* Page hero */}
         <section className="relative w-full h-56 md:h-72 overflow-hidden bg-[#1B2B4B] flex items-center justify-center">
-          <Image src="/images/청담사주작명원 외부2.jpg" alt="" fill className="object-cover object-center" />
+          <Image src="/images/hero/hero_map.jpg" alt="" fill className="object-cover object-center" />
           <div className="absolute inset-0 bg-[#1B2B4B]/60" />
           <div className="relative z-10 text-center px-6">
-            <h1
-              className="text-[36px] md:text-[42px] font-bold text-white leading-tight mb-3"
-              style={{ fontFamily: "'Noto Serif KR', serif" }}
-            >
+            <h1 className="text-[36px] md:text-[42px] font-bold text-white leading-tight mb-3" style={{ fontFamily: "'Noto Serif KR', serif" }}>
               오시는 길
             </h1>
             <p className="text-white/70 text-[14px]">청담사주작명원을 방문하시는 길을 안내합니다</p>
@@ -125,10 +113,7 @@ export default function LocationPage() {
 
               {/* Info */}
               <div className="lg:w-[340px] flex-shrink-0">
-                <h2
-                  className="text-[22px] font-bold text-[#1B2B4B] mb-6"
-                  style={{ fontFamily: "'Noto Serif KR', serif" }}
-                >
+                <h2 className="text-[22px] font-bold text-[#1B2B4B] mb-6" style={{ fontFamily: "'Noto Serif KR', serif" }}>
                   청담사주작명원
                 </h2>
 
@@ -166,9 +151,7 @@ export default function LocationPage() {
                     },
                   ].map((item) => (
                     <div key={item.label} className="flex gap-3">
-                      <div className="w-8 h-8 rounded-full border border-[#e8e8e8] flex items-center justify-center flex-shrink-0">
-                        {item.icon}
-                      </div>
+                      <div className="w-8 h-8 rounded-full border border-[#e8e8e8] flex items-center justify-center flex-shrink-0">{item.icon}</div>
                       <div>
                         <p className="text-[11px] text-[#888] font-medium mb-1">{item.label}</p>
                         <p className="text-[13px] text-[#333] whitespace-pre-line leading-relaxed">{item.value}</p>
@@ -178,10 +161,7 @@ export default function LocationPage() {
                 </div>
 
                 <div className="mt-8">
-                  <Link
-                    href="/booking"
-                    className="w-full block text-center bg-[#1B2B4B] text-white text-[13px] font-medium px-5 py-3 hover:bg-[#152240] transition-colors"
-                  >
+                  <Link href="/booking" className="w-full block text-center bg-[#1B2B4B] text-white text-[13px] font-medium px-5 py-3 hover:bg-[#152240] transition-colors">
                     상담 예약하기 →
                   </Link>
                 </div>
@@ -195,10 +175,7 @@ export default function LocationPage() {
           <div className="max-w-[1280px] mx-auto px-6">
             <div className="text-center mb-12">
               <p className="text-[12px] text-[#C9A84C] tracking-widest uppercase font-medium mb-3">How to get here</p>
-              <h2
-                className="text-[28px] font-bold text-[#1B2B4B]"
-                style={{ fontFamily: "'Noto Serif KR', serif" }}
-              >
+              <h2 className="text-[28px] font-bold text-[#1B2B4B]" style={{ fontFamily: "'Noto Serif KR', serif" }}>
                 교통 안내
               </h2>
             </div>
@@ -207,13 +184,8 @@ export default function LocationPage() {
               {transportInfo.map((t) => (
                 <div key={t.type} className="bg-white px-8 py-10">
                   <div className="flex items-center gap-3 mb-5">
-                    <div className="w-10 h-10 rounded-full border border-[#e8e8e8] flex items-center justify-center">
-                      {t.icon}
-                    </div>
-                    <h3
-                      className="text-[17px] font-bold text-[#1B2B4B]"
-                      style={{ fontFamily: "'Noto Serif KR', serif" }}
-                    >
+                    <div className="w-10 h-10 rounded-full border border-[#e8e8e8] flex items-center justify-center">{t.icon}</div>
+                    <h3 className="text-[17px] font-bold text-[#1B2B4B]" style={{ fontFamily: "'Noto Serif KR', serif" }}>
                       {t.type}
                     </h3>
                   </div>
@@ -235,33 +207,20 @@ export default function LocationPage() {
         <section className="w-full bg-white py-16">
           <div className="max-w-[1280px] mx-auto px-6">
             <div className="text-center mb-10">
-              <h2
-                className="text-[24px] font-bold text-[#1B2B4B]"
-                style={{ fontFamily: "'Noto Serif KR', serif" }}
-              >
+              <h2 className="text-[24px] font-bold text-[#1B2B4B]" style={{ fontFamily: "'Noto Serif KR', serif" }}>
                 건물 외관
               </h2>
               <p className="text-[13px] text-[#888] mt-2">아래 이미지를 참고하여 방문해 주세요</p>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               <div className="h-120 relative flex items-end p-5 overflow-hidden">
-                <Image
-                  src="/images/청담사주작명원 외부1.jpg"
-                  alt="건물 정문"
-                  fill
-                  className="object-cover object-center"
-                />
+                <Image src="/images/청담사주작명원 외부1.jpg" alt="건물 정문" fill className="object-cover object-center" />
                 <div className="relative z-10 bg-[#1B2B4B]/85 px-3 py-2">
                   <p className="text-white text-[13px] font-medium">건물 정문</p>
                 </div>
               </div>
               <div className="h-120 relative flex items-end p-5 overflow-hidden">
-                <Image
-                  src="/images/청담사주작명원 외부3.jpg"
-                  alt="간판 / 안내"
-                  fill
-                  className="object-cover object-center"
-                />
+                <Image src="/images/청담사주작명원 외부3.jpg" alt="간판 / 안내" fill className="object-cover object-center" />
                 <div className="relative z-10 bg-[#1B2B4B]/85 px-3 py-2">
                   <p className="text-white text-[13px] font-medium">간판 / 안내</p>
                 </div>
