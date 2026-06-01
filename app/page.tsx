@@ -185,12 +185,12 @@ const galleryItems = [
     desc: "충분한 시간을 가지고 정성스럽게 상담이 진행됩니다.",
   },
   {
-    src: "/images/청담사주작명원 내부2.jpg",
+    src: "/images/hero/hero_services_02.png",
     title: "정통 명리학 기반 상담",
     desc: "오랜 경험과 전문성으로 정확한 상담을 제공합니다.",
   },
   {
-    src: "/images/청담사주작명원 내부3.jpg",
+    src: "/images/chat.jpg",
     title: "방문 / 전화 / 비대면 상담 가능",
     desc: "상담자의 상황에 맞춰 편한 방식으로 상담받으실 수 있습니다.",
   },
