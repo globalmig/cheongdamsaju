@@ -32,7 +32,7 @@ export const faqData = [
       },
       {
         q: "상담 비용은 어떻게 되나요?",
-        a: "비용은 20만원입니다.",
+        a: "상담 종류와 내용에 따라 비용이 달라질 수 있어, 자세한 안내는 전화 상담을 통해 도와드리고 있습니다.",
       },
       {
         q: "상담 시 필요한 정보가 있나요?",
@@ -90,13 +90,10 @@ export default function FaqPage() {
       <main className="flex-1">
         {/* Page hero */}
         <section className="relative w-full h-56 md:h-72 overflow-hidden bg-[#1B2B4B] flex items-center justify-center">
-          <Image src="/images/청담사주작명원 내부5.jpg" alt="" fill className="object-cover object-center" />
+          <Image src="/images/청담사주작명원 내부5.jpg" alt="" fill sizes="100vw" className="object-cover object-center" />
           <div className="absolute inset-0 bg-[#1B2B4B]/60" />
           <div className="relative z-10 text-center px-6">
-            <h1
-              className="text-[36px] md:text-[42px] font-bold text-white leading-tight mb-3"
-              style={{ fontFamily: "'Noto Serif KR', serif" }}
-            >
+            <h1 className="text-[36px] md:text-[42px] font-bold text-white leading-tight mb-3" style={{ fontFamily: "'Noto Serif KR', serif" }}>
               자주 묻는 질문
             </h1>
             <p className="text-white/70 text-[14px]">궁금하신 내용을 확인해보세요</p>
@@ -119,15 +116,10 @@ export default function FaqPage() {
                 <path d="M10 6v5M10 14v.5" stroke="#1B2B4B" strokeWidth="1.5" strokeLinecap="round" />
               </svg>
             </div>
-            <h2
-              className="text-[22px] font-bold text-[#1B2B4B] mb-3"
-              style={{ fontFamily: "'Noto Serif KR', serif" }}
-            >
+            <h2 className="text-[22px] font-bold text-[#1B2B4B] mb-3" style={{ fontFamily: "'Noto Serif KR', serif" }}>
               더 궁금하신 내용이 있으신가요?
             </h2>
-            <p className="text-[14px] text-[#666] mb-6">
-              전화 또는 예약 페이지를 통해 언제든지 도움을 드립니다.
-            </p>
+            <p className="text-[14px] text-[#666] mb-6">전화 또는 예약 페이지를 통해 언제든지 도움을 드립니다.</p>
             <div className="flex flex-col sm:flex-row gap-3 justify-center">
               <Link
                 href="/booking"

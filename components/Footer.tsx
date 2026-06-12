@@ -1,8 +1,8 @@
-export default function Footer() {
+export default function Footer({ hideHoursBar }: { hideHoursBar?: boolean }) {
   return (
-    <footer className="w-full bg-[#1B2B4B] text-white">
+    <footer className="w-full bg-[#1B2B4B] text-white border-t border-[#3a4f72]">
       {/* Top bar */}
-      <div className="w-full bg-white border-t border-[#e8e8e8]">
+      {!hideHoursBar && <div className="w-full bg-white border-t border-[#e8e8e8]">
         <div className="max-w-[1280px] mx-auto px-4 md:px-6 py-3 md:h-[64px] md:py-0 flex items-center">
           <div className="flex items-start sm:items-center gap-3">
             <div className="flex items-center justify-center w-8 h-8 rounded-full border border-[#1B2B4B] flex-shrink-0 mt-0.5 sm:mt-0">
@@ -14,13 +14,13 @@ export default function Footer() {
             <div>
               <span className="text-[12px] font-semibold text-[#1B2B4B] mr-2">상담 가능 시간</span>
               <span className="text-[12px] text-[#555] block sm:inline">
-                평일 10:00 ~ 19:00 &nbsp;|&nbsp; 주말 11:00 ~ 17:00
-                <span className="text-[#888] ml-1">(매주 목요일 휴무)</span>
+                평일 10:00~19:00 &nbsp;|&nbsp; 주말 11:00~17:00
+                <span className="text-[#888] ml-1">(일요일 휴무, 미리 예약 시 상담가능)</span>
               </span>
             </div>
           </div>
         </div>
-      </div>
+      </div>}
 
       {/* Main footer */}
       <div className="max-w-[1280px] mx-auto px-6 py-12">
@@ -47,11 +47,11 @@ export default function Footer() {
             <div>
               <p className="text-[11px] text-white/40 uppercase tracking-widest mb-1">Hours</p>
               <p className="text-[13px] text-white/75 leading-relaxed">
-                평일 10:00 ~ 19:00
+                평일 10:00~19:00
                 <br />
-                주말 11:00 ~ 17:00
+                주말 11:00~17:00
                 <br />
-                <span className="text-white/45">목요일 휴무</span>
+                <span className="text-white/45">일요일 휴무, 미리 예약 시 상담가능</span>
               </p>
             </div>
           </div>
@@ -64,10 +64,10 @@ export default function Footer() {
           <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3">
             <p className="text-[12px] text-white/35">© 2026 청담사주작명원. All rights reserved.</p>
             <div className="flex gap-4">
-              <a href="#" className="text-[12px] text-white/35 hover:text-white/60 transition-colors">
+              <a href="/privacy" className="text-[12px] text-white/35 hover:text-white/60 transition-colors">
                 개인정보처리방침
               </a>
-              <a href="#" className="text-[12px] text-white/35 hover:text-white/60 transition-colors">
+              <a href="/terms" className="text-[12px] text-white/35 hover:text-white/60 transition-colors">
                 이용약관
               </a>
             </div>

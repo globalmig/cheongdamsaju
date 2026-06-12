@@ -17,7 +17,7 @@ export default function BookingPage() {
         {/* Page hero */}
         <section className="relative w-full h-56 md:h-72 overflow-hidden bg-[#1B2B4B] flex items-center justify-center">
           {/* <Image src="/images/청담사주작명원 내부3.jpg" alt="" fill className="object-cover object-center" /> */}
-          <Image src="/images/hero/hero_booking.jpg" alt="" fill className="object-cover object-center" />
+          <Image src="/images/청담사주작명원 내부4.jpg" alt="" fill sizes="100vw" className="object-cover object-center" />
           <div className="absolute inset-0 bg-[#1B2B4B]/60" />
           <div className="relative z-10 text-center px-6">
             <h1 className="text-[36px] md:text-[42px] font-bold text-white leading-tight mb-3" style={{ fontFamily: "'Noto Serif KR', serif" }}>
@@ -45,7 +45,7 @@ export default function BookingPage() {
                 },
                 {
                   title: "영업시간",
-                  items: ["평일 10:00 ~ 19:00", "주말 11:00 ~ 17:00", "목요일 휴무"],
+                  items: ["평일 10:00~19:00", "주말 11:00~17:00", "일요일 휴무, 미리 예약 시 상담가능"],
                 },
                 {
                   title: "문의",
@@ -70,7 +70,7 @@ export default function BookingPage() {
           </div>
         </section>
       </main>
-      <Footer />
+      <Footer hideHoursBar />
     </div>
   );
 }

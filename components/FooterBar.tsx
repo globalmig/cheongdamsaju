@@ -16,7 +16,7 @@ export default function FooterBar() {
             </span>
             <span className="text-[12px] text-[#555]">
               평일 10:00 ~ 19:00 &nbsp;|&nbsp; 주말 11:00 ~ 17:00
-              <span className="text-[#888] ml-1">(매주 목요일 휴무)</span>
+              <span className="text-[#888] ml-1">(일요일 휴무, 미리 예약 시 상담가능)</span>
             </span>
           </div>
         </div>

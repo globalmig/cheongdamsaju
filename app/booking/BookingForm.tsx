@@ -20,9 +20,9 @@ const WEEKEND_SLOTS = ["11:00", "13:00", "14:00", "15:00", "16:00"];
 
 function getDateType(dateStr: string): "weekday" | "weekend" | "closed" | null {
   if (!dateStr) return null;
-  const day = new Date(dateStr).getDay(); // 0=일, 1=월 ... 4=목 ... 6=토
-  if (day === 4) return "closed"; // 목요일 휴무
-  if (day === 0 || day === 6) return "weekend";
+  const day = new Date(dateStr).getDay(); // 0=일, 1=월 ... 6=토
+  if (day === 0) return "closed"; // 일요일 휴무
+  if (day === 6) return "weekend";
   return "weekday";
 }
 
@@ -195,7 +195,7 @@ export default function BookingForm() {
               </div>
               {getDateType(form.date) === "closed" ? (
                 <div className="bg-[#FFF8F0] border border-[#F5C87A] px-5 py-4">
-                  <p className="text-[13px] text-[#A07030] font-medium">목요일은 휴무일입니다. 다른 날짜를 선택해 주세요.</p>
+                  <p className="text-[13px] text-[#A07030] font-medium">일요일은 휴무일입니다. 다른 날짜를 선택해 주세요.</p>
                 </div>
               ) : (
                 <div>
@@ -217,7 +217,7 @@ export default function BookingForm() {
                   </div>
                 </div>
               )}
-              <p className="text-[12px] text-[#888]">평일 10:00 ~ 19:00 · 주말 11:00 ~ 17:00 · 목요일 휴무</p>
+              <p className="text-[12px] text-[#888]">평일 10:00 ~ 19:00 · 주말 11:00 ~ 17:00 · 일요일 휴무, 미리 예약 시 상담가능</p>
             </div>
           </div>
         )}

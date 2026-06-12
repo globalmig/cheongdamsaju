@@ -93,7 +93,7 @@ export default function GuidePage() {
       <main className="flex-1">
         {/* Page hero */}
         <section className="relative w-full h-56 md:h-72 overflow-hidden bg-[#1B2B4B] flex items-center justify-center">
-          <Image src="/images/청담사주작명원 내부4.jpg" alt="" fill className="object-cover object-center" />
+          <Image src="/images/청담사주작명원 내부4.jpg" alt="" fill sizes="100vw" className="object-cover object-center" />
           <div className="absolute inset-0 bg-[#1B2B4B]/60" />
           <div className="relative z-10 text-center px-6">
             <h1
@@ -261,7 +261,7 @@ export default function GuidePage() {
               예약 / 상담 신청하기
             </h2>
             <p className="text-white/60 text-[14px] mb-8">
-              평일 10:00 ~ 19:00 &nbsp;·&nbsp; 주말 11:00 ~ 17:00 &nbsp;·&nbsp; 목요일 휴무
+              평일 10:00 ~ 19:00 &nbsp;·&nbsp; 주말 11:00 ~ 17:00 &nbsp;·&nbsp; 일요일 휴무, 미리 예약 시 상담가능
             </p>
             <div className="flex flex-col sm:flex-row gap-3 justify-center">
               <Link

@@ -56,7 +56,7 @@ export default function LocationPage() {
       <main className="flex-1">
         {/* Page hero */}
         <section className="relative w-full h-56 md:h-72 overflow-hidden bg-[#1B2B4B] flex items-center justify-center">
-          <Image src="/images/hero/hero_map.jpg" alt="" fill className="object-cover object-center" />
+          <Image src="/images/hero/hero_map.jpg" alt="" fill sizes="100vw" className="object-cover object-center" />
           <div className="absolute inset-0 bg-[#1B2B4B]/60" />
           <div className="relative z-10 text-center px-6">
             <h1 className="text-[36px] md:text-[42px] font-bold text-white leading-tight mb-3" style={{ fontFamily: "'Noto Serif KR', serif" }}>
@@ -137,7 +137,7 @@ export default function LocationPage() {
                         </svg>
                       ),
                       label: "영업시간",
-                      value: "평일 10:00 ~ 19:00\n주말 11:00 ~ 17:00\n목요일 휴무",
+                      value: "평일 10:00~19:00\n주말 11:00~17:00\n일요일 휴무, 미리 예약 시 상담가능",
                     },
                     {
                       icon: (
@@ -214,13 +214,13 @@ export default function LocationPage() {
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               <div className="h-64 md:h-120 relative flex items-end p-5 overflow-hidden">
-                <Image src="/images/청담사주작명원 외부1.jpg" alt="건물 정문" fill className="object-cover object-center" />
+                <Image src="/images/청담사주작명원 외부1.jpg" alt="건물 정문" fill sizes="(max-width: 768px) 100vw, 50vw" className="object-cover object-center" />
                 <div className="relative z-10 bg-[#1B2B4B]/85 px-3 py-2">
                   <p className="text-white text-[13px] font-medium">건물 정문</p>
                 </div>
               </div>
               <div className="h-64 md:h-120 relative flex items-end p-5 overflow-hidden">
-                <Image src="/images/청담사주작명원 외부3.jpg" alt="간판 / 안내" fill className="object-cover object-center" />
+                <Image src="/images/청담사주작명원 외부3.jpg" alt="간판 / 안내" fill sizes="(max-width: 768px) 100vw, 50vw" className="object-cover object-center" />
                 <div className="relative z-10 bg-[#1B2B4B]/85 px-3 py-2">
                   <p className="text-white text-[13px] font-medium">간판 / 안내</p>
                 </div>

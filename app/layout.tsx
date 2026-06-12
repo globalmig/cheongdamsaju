@@ -1,5 +1,22 @@
 import type { Metadata } from "next";
+import { Noto_Serif_KR, Noto_Sans_KR } from "next/font/google";
 import "./globals.css";
+
+const notoSerifKR = Noto_Serif_KR({
+  weight: ["400", "500", "600", "700"],
+  subsets: ["latin"],
+  display: "swap",
+  preload: false,
+  variable: "--font-noto-serif-kr",
+});
+
+const notoSansKR = Noto_Sans_KR({
+  weight: ["300", "400", "500", "600", "700"],
+  subsets: ["latin"],
+  display: "swap",
+  preload: false,
+  variable: "--font-noto-sans-kr",
+});
 
 export const metadata: Metadata = {
   title: "청담사주 - 정통 사주·작명 상담",
@@ -12,15 +29,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="ko" className="h-full">
-      <head>
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link
-          href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;500;600;700&family=Noto+Sans+KR:wght@300;400;500;600;700&display=swap"
-          rel="stylesheet"
-        />
-      </head>
+    <html lang="ko" className={`h-full ${notoSerifKR.variable} ${notoSansKR.variable}`}>
       <body className="min-h-full flex flex-col">{children}</body>
     </html>
   );

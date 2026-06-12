@@ -18,10 +18,34 @@ const features = [
 ];
 
 const values = [
-  { num: "01", title: "정통 명리학 기반", desc: "수십 년 전통의 정통 명리학을 기반으로 사주팔자의 구조와 흐름을 정밀하게 분석합니다." },
-  { num: "02", title: "현실적인 방향 제시", desc: "단순한 운세 풀이가 아닌, 실생활에 적용할 수 있는 현실적인 방향과 선택의 지혜를 제시합니다." },
-  { num: "03", title: "개인 맞춤 상담", desc: "사주팔자의 구조를 바탕으로 개인의 상황과 목표에 맞춤화된 1:1 상담을 진행합니다." },
-  { num: "04", title: "신뢰와 정성", desc: "한 분 한 분 정성스럽게, 비밀이 철저히 보장되는 신뢰할 수 있는 상담 환경을 제공합니다." },
+  {
+    num: "01",
+    title: "정통 명리학 기반",
+    highlight: "수십 년 전통의 정통 명리학을 기반으로",
+    desc: "사주팔자의 구조와 흐름을 정밀하게 분석합니다.",
+    icon: <BookOpen size={80} strokeWidth={1.8} />,
+  },
+  {
+    num: "02",
+    title: "현실적인 방향 제시",
+    highlight: "단순한 운세풀이가 아닌, 실생활에 적용할 수 있는",
+    desc: "현실적인 방향과 선택의 지혜를 제시합니다.",
+    icon: <Compass size={80} strokeWidth={1.8} />,
+  },
+  {
+    num: "03",
+    title: "개인 맞춤 상담",
+    highlight: "사주팔자의 구조를 바탕으로",
+    desc: "개인의 상황과 목표에 맞춤화된 1:1 상담을 진행합니다.",
+    icon: <UserCheck size={80} strokeWidth={1.8} />,
+  },
+  {
+    num: "04",
+    title: "신뢰와 정성",
+    highlight: "한 분 한 분 정성스럽게,",
+    desc: "비밀이 철저히 보장되는 신뢰할 수 있는 상담 환경을 제공합니다.",
+    icon: <ShieldCheck size={80} strokeWidth={1.8} />,
+  },
 ];
 
 export default function AboutPage() {
@@ -33,7 +57,7 @@ export default function AboutPage() {
         <section className="w-full bg-white">
           {/* Full-width image */}
           <div className="relative w-full h-85 md:h-115">
-            <Image src="/images/청담사주작명원 내부2.jpg" alt="청담사주작명원 내부" fill className="object-cover" priority />
+            <Image src="/images/청담사주작명원 내부2.jpg" alt="청담사주작명원 내부" fill sizes="100vw" className="object-cover" priority />
             {/* <div className="absolute inset-0 bg-[#1B2B4B]/40" /> */}
             <div className="absolute bottom-0 left-0 right-0 h-40 bg-linear-to-t from-white to-transparent" />
           </div>
@@ -82,32 +106,37 @@ export default function AboutPage() {
             {/* Image */}
             <div className="w-full lg:w-[42%] shrink-0">
               <div className="relative w-full aspect-[3/4] overflow-hidden">
-                <Image src="/images/ceo/KakaoTalk_20260527_110958816_05.jpg" alt="청담사주작명원 원장" fill className="object-cover object-top" />
+                <Image src="/images/ceo/KakaoTalk_20260527_110958816_05.jpg" alt="청담사주작명원 원장" fill sizes="(max-width: 1024px) 100vw, 42vw" className="object-cover object-top" />
               </div>
             </div>
           </div>
         </section>
 
         {/* ── 4. Values ── */}
-        <section className="w-full bg-[#F8F7F5] py-16">
-          <div className="max-w-7xl mx-auto px-6">
+        <section className="w-full bg-[#F8F7F5] py-16 md:py-20">
+          <div className="max-w-5xl mx-auto px-6">
             <div className="text-center mb-12">
-              <p className="text-[12px] text-[#C9A84C] tracking-widest uppercase font-medium mb-3">Our Values</p>
-              <h2 className="text-[26px] font-bold text-[#1B2B4B]" style={{ fontFamily: "'Noto Serif KR', serif" }}>
+              <p className="text-[11px] text-[#C9A84C] tracking-[0.2em] uppercase font-semibold mb-3">Our Values</p>
+              <h2 className="text-[26px] md:text-[28px] font-bold text-[#1B2B4B]" style={{ fontFamily: "'Noto Serif KR', serif" }}>
                 청담사주작명원이 추구하는 가치
               </h2>
             </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-px bg-[#e8e8e8]">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
               {values.map((v) => (
-                <div key={v.num} className="bg-[#F8F7F5] px-8 py-10 flex gap-5">
-                  <span className="text-[38px] font-bold text-[#e0ddd8] leading-none shrink-0" style={{ fontFamily: "'Noto Serif KR', serif" }}>
-                    {v.num}
-                  </span>
+                <div key={v.num} className="relative bg-white rounded-2xl px-8 py-8 shadow-sm border border-[#eeeeee] flex flex-col gap-4 overflow-hidden">
+                  {/* 장식 아이콘 */}
+                  <div className="absolute bottom-4 right-4 text-[#1B2B4B]/6">
+                    {v.icon}
+                  </div>
+                  <div className="w-9 h-9 rounded-full bg-[#1B2B4B] flex items-center justify-center shrink-0">
+                    <span className="text-[11px] font-bold text-white tracking-wide">{v.num}</span>
+                  </div>
                   <div>
-                    <h3 className="text-[16px] font-bold text-[#1B2B4B] mb-2" style={{ fontFamily: "'Noto Serif KR', serif" }}>
+                    <h3 className="text-[18px] font-bold text-[#1B2B4B] mb-3" style={{ fontFamily: "'Noto Serif KR', serif" }}>
                       {v.title}
                     </h3>
-                    <p className="text-[13px] text-[#666] leading-relaxed">{v.desc}</p>
+                    <p className="text-[13.5px] text-[#555] leading-relaxed">{v.highlight}</p>
+                    <p className="text-[13px] text-[#999] leading-relaxed mt-1">{v.desc}</p>
                   </div>
                 </div>
               ))}
@@ -142,7 +171,7 @@ export default function AboutPage() {
                 <br />
                 청담사주작명원이 함께하겠습니다
               </h2>
-              <p className="text-white/50 text-[13px] mb-8">방문·전화·비대면 상담 가능 &nbsp;·&nbsp; 평일 10:00~19:00 &nbsp;·&nbsp; 주말 11:00~17:00</p>
+              <p className="text-white/50 text-[13px] mb-8">방문·전화·비대면 상담 가능 &nbsp;·&nbsp; 평일 10:00~19:00 &nbsp;·&nbsp; 주말 11:00~17:00 &nbsp;·&nbsp; 일요일 휴무, 미리 예약 시 상담가능</p>
               <Link href="/booking" className="inline-flex self-start items-center gap-2 bg-white text-[#1B2B4B] text-[13px] font-semibold px-8 py-3.5 hover:bg-[#F8F7F5] transition-colors">
                 상담 예약하기 →
               </Link>
@@ -150,7 +179,7 @@ export default function AboutPage() {
           </div>
         </section>
       </main>
-      <Footer />
+      <Footer hideHoursBar />
     </div>
   );
 }

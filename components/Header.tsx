@@ -47,7 +47,7 @@ export default function Header() {
           {navLinks.map((link) =>
             link.dropdown ? (
               <div key={link.href} className="relative group">
-                <Link href={link.href} className={`px-3 py-2 flex items-center gap-1 transition-colors ${isServicesActive ? "text-[#1B2B4B] font-semibold" : "hover:text-[#1B2B4B]"}`}>
+                <Link href={link.href} className={`px-5 py-2 flex items-center gap-1 transition-colors ${isServicesActive ? "text-[#1B2B4B] font-semibold" : "hover:text-[#1B2B4B]"}`}>
                   {link.label}
                   <svg width="10" height="10" viewBox="0 0 10 10" fill="none" className="transition-transform duration-200 group-hover:rotate-180">
                     <path d="M2 3.5l3 3 3-3" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round" />
@@ -69,7 +69,7 @@ export default function Header() {
                 </div>
               </div>
             ) : (
-              <Link key={link.href} href={link.href} className={`px-3 py-2 transition-colors ${pathname === link.href ? "text-[#1B2B4B] font-semibold" : "hover:text-[#1B2B4B]"}`}>
+              <Link key={link.href} href={link.href} className={`px-5 py-2 transition-colors ${pathname === link.href ? "text-[#1B2B4B] font-semibold" : "hover:text-[#1B2B4B]"}`}>
                 {link.label}
               </Link>
             ),
@@ -78,8 +78,10 @@ export default function Header() {
 
         {/* Right buttons */}
         <div className="hidden lg:flex items-center gap-2 flex-shrink-0">
-          <button
-            onClick={() => alert("준비중입니다.")}
+          <a
+            href="http://blog.naver.com/chungdamsaju"
+            target="_blank"
+            rel="noopener noreferrer"
             title="블로그"
             className="w-9 h-9 flex items-center justify-center text-[#666] hover:text-[#1B2B4B] hover:bg-[#f5f7fa] rounded-md transition-colors"
           >
@@ -87,7 +89,7 @@ export default function Header() {
               <rect x="2" y="2" width="14" height="14" rx="2" stroke="currentColor" strokeWidth="1.4" />
               <path d="M5 6h8M5 9h8M5 12h5" stroke="currentColor" strokeWidth="1.3" strokeLinecap="round" />
             </svg>
-          </button>
+          </a>
           <button
             onClick={() => alert("준비중입니다.")}
             title="유튜브"

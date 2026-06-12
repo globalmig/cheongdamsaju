@@ -44,7 +44,7 @@ export default function ServiceDetail({
 
         {/* Hero */}
         <section className="relative w-full overflow-hidden bg-[#1B2B4B] py-14 md:py-20">
-          <Image src="/images/청담사주작명원 정보1.jpg" alt="" fill className="object-cover object-center" />
+          <Image src="/images/청담사주작명원 정보1.jpg" alt="" fill sizes="100vw" className="object-cover object-center" />
           <div className="absolute inset-0 bg-[#1B2B4B]/75" />
           <div className="relative z-10 max-w-[1280px] mx-auto px-4 md:px-6">
             <div className="flex items-center gap-2 text-[12px] text-white/40 mb-6">
@@ -108,7 +108,7 @@ export default function ServiceDetail({
                     {data.items.map((item) => (
                       <li
                         key={item}
-                        className="text-[13px] text-[#444] border border-[#e0e0e0] rounded-full px-4 py-1.5 leading-none"
+                        className="text-[13px] text-[#444] bg-[#f2f2f2] border border-[#e0e0e0] rounded-full px-4 py-1.5 leading-none"
                       >
                         {item}
                       </li>

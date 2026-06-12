@@ -135,7 +135,7 @@ export default function ServicesPage() {
         {/* Page hero */}
         <section className="relative w-full h-56 md:h-72 overflow-hidden bg-[#1B2B4B] flex items-center justify-center">
           {/* <Image src="/images/청담사주작명원 내부2.jpg" alt="" fill className="object-cover object-center" /> */}
-          <Image src="/images/hero/hero_services_02.png" alt="" fill className="object-cover object-center" />
+          <Image src="/images/hero/hero_services_02.png" alt="" fill sizes="100vw" className="object-cover object-center" />
           <div className="absolute inset-0 bg-[#1B2B4B]/60" />
           <div className="relative z-10 text-center px-6">
             <h1 className="text-[36px] md:text-[42px] font-bold text-white leading-tight mb-3" style={{ fontFamily: "'Noto Serif KR', serif" }}>
@@ -165,7 +165,7 @@ export default function ServicesPage() {
                   <div className="p-8">
                     {/* Icon + title header */}
                     <div className="flex items-start gap-5 mb-5">
-                      <div className="w-14 h-14 rounded-full border border-[#e8e8e8] group-hover:border-[#C9A84C] flex items-center justify-center shrink-0 transition-colors">{s.icon}</div>
+                      <div className="w-14 h-14 rounded-full border border-[#e8e8e8] bg-[#F0F4F8] group-hover:border-[#C9A84C] group-hover:bg-[#FBF8F0] flex items-center justify-center shrink-0 transition-colors">{s.icon}</div>
                       <div className="pt-1">
                         <p className="text-[11px] text-[#C9A84C] tracking-widest uppercase font-medium mb-1.5">{s.subtitle}</p>
                         <h2 className="text-[20px] font-bold text-[#1B2B4B] leading-tight" style={{ fontFamily: "'Noto Serif KR', serif" }}>
@@ -178,7 +178,7 @@ export default function ServicesPage() {
 
                     <ul className="flex flex-wrap gap-2 mb-6">
                       {s.items.map((item) => (
-                        <li key={item} className="text-[12px] text-[#555] border border-[#e0e0e0] rounded-full px-3 py-1 leading-none">
+                        <li key={item} className="text-[12px] text-[#555] bg-[#F0F4F8] border border-[#dde3ed] rounded-full px-3 py-1 leading-none">
                           {item}
                         </li>
                       ))}
@@ -198,14 +198,14 @@ export default function ServicesPage() {
             <h2 className="text-[26px] font-bold text-white mb-4" style={{ fontFamily: "'Noto Serif KR', serif" }}>
               사주를 바탕으로 인생의 흐름과 방향을 함께 살펴드립니다
             </h2>
-            <p className="text-white/60 text-[14px] mb-8">평일 10:00 ~ 19:00 &nbsp;·&nbsp; 주말 11:00 ~ 17:00 &nbsp;·&nbsp; 방문·전화·비대면 상담 가능</p>
+            <p className="text-white/60 text-[14px] mb-8">평일 10:00 ~ 19:00 &nbsp;·&nbsp; 주말 11:00 ~ 17:00 &nbsp;·&nbsp; 일요일 휴무, 미리 예약 시 상담가능 &nbsp;·&nbsp; 방문·전화·비대면 상담 가능</p>
             <Link href="/booking" className="inline-flex items-center gap-2 bg-white text-[#1B2B4B] text-[14px] font-semibold px-8 py-4 hover:bg-[#F8F7F5] transition-colors">
               상담 예약하기 →
             </Link>
           </div>
         </section>
       </main>
-      <Footer />
+      <Footer hideHoursBar />
     </div>
   );
 }
