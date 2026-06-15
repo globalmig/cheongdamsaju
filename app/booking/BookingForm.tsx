@@ -4,10 +4,7 @@ import { useState } from "react";
 
 const STEPS = ["상담 종류 선택", "상담 방식 선택", "일정 선택", "정보 입력", "예약 완료"];
 
-const consultTypes = [
-  "사주상담", "궁합상담", "재물운 상담", "사업운 상담",
-  "택일 상담", "전문·직업·시험운 상담", "작명·개명·상호작명", "기타 상담",
-];
+const consultTypes = ["사주상담", "궁합상담", "재물운 상담", "사업운 상담", "택일 상담", "전문·직업·시험운 상담", "작명·개명·상호작명", "기타 상담"];
 
 const consultMethods = [
   { value: "visit", label: "방문 상담", desc: "직접 방문하여 대면 상담" },
@@ -41,14 +38,20 @@ type FormData = {
 export default function BookingForm() {
   const [step, setStep] = useState(0);
   const [form, setForm] = useState<FormData>({
-    type: "", method: "", date: "", time: "",
-    name: "", phone: "", birthDate: "", gender: "", note: "",
+    type: "",
+    method: "",
+    date: "",
+    time: "",
+    name: "",
+    phone: "",
+    birthDate: "",
+    gender: "",
+    note: "",
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitError, setSubmitError] = useState("");
 
-  const set = (key: keyof FormData, value: string) =>
-    setForm((prev) => ({ ...prev, [key]: value }));
+  const set = (key: keyof FormData, value: string) => setForm((prev) => ({ ...prev, [key]: value }));
 
   const submitBooking = async () => {
     setIsSubmitting(true);
@@ -87,11 +90,7 @@ export default function BookingForm() {
               <div className="flex flex-col items-center gap-1.5">
                 <div
                   className={`w-8 h-8 rounded-full flex items-center justify-center text-[12px] font-bold transition-colors ${
-                    i < step
-                      ? "bg-[#C9A84C] text-white"
-                      : i === step
-                      ? "bg-[#1B2B4B] text-white"
-                      : "bg-[#f0f0f0] text-[#aaa]"
+                    i < step ? "bg-[#C9A84C] text-white" : i === step ? "bg-[#1B2B4B] text-white" : "bg-[#f0f0f0] text-[#aaa]"
                   }`}
                 >
                   {i < step ? (
@@ -102,17 +101,9 @@ export default function BookingForm() {
                     i + 1
                   )}
                 </div>
-                <span
-                  className={`text-[10px] whitespace-nowrap hidden sm:block ${
-                    i === step ? "text-[#1B2B4B] font-semibold" : "text-[#aaa]"
-                  }`}
-                >
-                  {label}
-                </span>
+                <span className={`text-[10px] whitespace-nowrap hidden sm:block ${i === step ? "text-[#1B2B4B] font-semibold" : "text-[#aaa]"}`}>{label}</span>
               </div>
-              {i < STEPS.length - 1 && (
-                <div className={`flex-1 h-px mx-2 ${i < step ? "bg-[#C9A84C]" : "bg-[#e8e8e8]"}`} />
-              )}
+              {i < STEPS.length - 1 && <div className={`flex-1 h-px mx-2 ${i < step ? "bg-[#C9A84C]" : "bg-[#e8e8e8]"}`} />}
             </div>
           ))}
         </div>
@@ -122,10 +113,7 @@ export default function BookingForm() {
         {/* Step 0: 상담 종류 */}
         {step === 0 && (
           <div>
-            <h2
-              className="text-[20px] font-bold text-[#1B2B4B] mb-6"
-              style={{ fontFamily: "'Noto Serif KR', serif" }}
-            >
+            <h2 className="text-[20px] font-bold text-[#1B2B4B] mb-6" style={{ fontFamily: "'Noto Serif KR', serif" }}>
               상담 종류를 선택해 주세요
             </h2>
             <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
@@ -134,9 +122,7 @@ export default function BookingForm() {
                   key={t}
                   onClick={() => set("type", t)}
                   className={`py-4 px-3 border text-[13px] font-medium transition-colors text-center ${
-                    form.type === t
-                      ? "border-[#1B2B4B] bg-[#1B2B4B] text-white"
-                      : "border-[#e8e8e8] text-[#444] hover:border-[#1B2B4B]/40"
+                    form.type === t ? "border-[#1B2B4B] bg-[#1B2B4B] text-white" : "border-[#e8e8e8] text-[#444] hover:border-[#1B2B4B]/40"
                   }`}
                 >
                   {t}
@@ -149,10 +135,7 @@ export default function BookingForm() {
         {/* Step 1: 상담 방식 */}
         {step === 1 && (
           <div>
-            <h2
-              className="text-[20px] font-bold text-[#1B2B4B] mb-6"
-              style={{ fontFamily: "'Noto Serif KR', serif" }}
-            >
+            <h2 className="text-[20px] font-bold text-[#1B2B4B] mb-6" style={{ fontFamily: "'Noto Serif KR', serif" }}>
               상담 방식을 선택해 주세요
             </h2>
             <div className="flex flex-col sm:flex-row gap-4">
@@ -160,11 +143,7 @@ export default function BookingForm() {
                 <button
                   key={m.value}
                   onClick={() => set("method", m.value)}
-                  className={`flex-1 border py-6 px-5 text-left transition-colors ${
-                    form.method === m.value
-                      ? "border-[#1B2B4B] bg-[#1B2B4B]/5"
-                      : "border-[#e8e8e8] hover:border-[#1B2B4B]/40"
-                  }`}
+                  className={`flex-1 border py-6 px-5 text-left transition-colors ${form.method === m.value ? "border-[#1B2B4B] bg-[#1B2B4B]/5" : "border-[#e8e8e8] hover:border-[#1B2B4B]/40"}`}
                 >
                   <p className="text-[15px] font-bold text-[#1B2B4B] mb-1">{m.label}</p>
                   <p className="text-[12.5px] text-[#888]">{m.desc}</p>
@@ -177,10 +156,7 @@ export default function BookingForm() {
         {/* Step 2: 일정 선택 */}
         {step === 2 && (
           <div>
-            <h2
-              className="text-[20px] font-bold text-[#1B2B4B] mb-6"
-              style={{ fontFamily: "'Noto Serif KR', serif" }}
-            >
+            <h2 className="text-[20px] font-bold text-[#1B2B4B] mb-6" style={{ fontFamily: "'Noto Serif KR', serif" }}>
               상담 일정을 선택해 주세요
             </h2>
             <div className="flex flex-col gap-6">
@@ -189,7 +165,10 @@ export default function BookingForm() {
                 <input
                   type="date"
                   value={form.date}
-                  onChange={(e) => { set("date", e.target.value); set("time", ""); }}
+                  onChange={(e) => {
+                    set("date", e.target.value);
+                    set("time", "");
+                  }}
                   className="border border-[#e8e8e8] px-4 py-3 text-[14px] text-[#333] w-full sm:w-auto focus:outline-none focus:border-[#1B2B4B]"
                 />
               </div>
@@ -206,9 +185,7 @@ export default function BookingForm() {
                         key={t}
                         onClick={() => set("time", t)}
                         className={`px-4 py-2.5 border text-[13px] font-medium transition-colors ${
-                          form.time === t
-                            ? "border-[#1B2B4B] bg-[#1B2B4B] text-white"
-                            : "border-[#e8e8e8] text-[#444] hover:border-[#1B2B4B]/40"
+                          form.time === t ? "border-[#1B2B4B] bg-[#1B2B4B] text-white" : "border-[#e8e8e8] text-[#444] hover:border-[#1B2B4B]/40"
                         }`}
                       >
                         {t}
@@ -225,10 +202,7 @@ export default function BookingForm() {
         {/* Step 3: 정보 입력 */}
         {step === 3 && (
           <div>
-            <h2
-              className="text-[20px] font-bold text-[#1B2B4B] mb-6"
-              style={{ fontFamily: "'Noto Serif KR', serif" }}
-            >
+            <h2 className="text-[20px] font-bold text-[#1B2B4B] mb-6" style={{ fontFamily: "'Noto Serif KR', serif" }}>
               정보를 입력해 주세요
             </h2>
             <div className="flex flex-col gap-5 max-w-[480px]">
@@ -248,7 +222,7 @@ export default function BookingForm() {
                   type="tel"
                   value={form.phone}
                   onChange={(e) => set("phone", e.target.value)}
-                  placeholder="010-0000-0000"
+                  placeholder="010-3816-3231"
                   className="border border-[#e8e8e8] px-4 py-3 text-[14px] text-[#333] w-full focus:outline-none focus:border-[#1B2B4B] placeholder:text-[#bbb]"
                 />
               </div>
@@ -270,9 +244,7 @@ export default function BookingForm() {
                       key={g}
                       onClick={() => set("gender", g)}
                       className={`px-6 py-2.5 border text-[13px] font-medium transition-colors ${
-                        form.gender === g
-                          ? "border-[#1B2B4B] bg-[#1B2B4B] text-white"
-                          : "border-[#e8e8e8] text-[#444] hover:border-[#1B2B4B]/40"
+                        form.gender === g ? "border-[#1B2B4B] bg-[#1B2B4B] text-white" : "border-[#e8e8e8] text-[#444] hover:border-[#1B2B4B]/40"
                       }`}
                     >
                       {g}
@@ -302,18 +274,11 @@ export default function BookingForm() {
                 <path d="M6 14l5 5 11-11" stroke="white" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" />
               </svg>
             </div>
-            <h2
-              className="text-[24px] font-bold text-[#1B2B4B] mb-4"
-              style={{ fontFamily: "'Noto Serif KR', serif" }}
-            >
+            <h2 className="text-[24px] font-bold text-[#1B2B4B] mb-4" style={{ fontFamily: "'Noto Serif KR', serif" }}>
               예약이 신청되었습니다
             </h2>
-            <p className="text-[14px] text-[#666] leading-relaxed mb-2">
-              {form.name}님의 예약 신청이 접수되었습니다.
-            </p>
-            <p className="text-[14px] text-[#666] leading-relaxed mb-8">
-              예약 확인은 문자(SMS)로 안내드리겠습니다.
-            </p>
+            <p className="text-[14px] text-[#666] leading-relaxed mb-2">{form.name}님의 예약 신청이 접수되었습니다.</p>
+            <p className="text-[14px] text-[#666] leading-relaxed mb-8">예약 확인은 문자(SMS)로 안내드리겠습니다.</p>
 
             <div className="bg-[#F8F7F5] border border-[#e8e8e8] p-6 max-w-[400px] mx-auto mb-8 text-left">
               <div className="flex flex-col gap-3">
@@ -339,9 +304,7 @@ export default function BookingForm() {
         {/* Navigation buttons */}
         {step < 4 && (
           <div className="flex flex-col items-end gap-3 mt-10 pt-6 border-t border-[#e8e8e8]">
-            {submitError && (
-              <p className="text-[12.5px] text-red-500 w-full">{submitError}</p>
-            )}
+            {submitError && <p className="text-[12.5px] text-red-500 w-full">{submitError}</p>}
             <div className="flex justify-between w-full">
               <button
                 onClick={() => setStep((s) => s - 1)}
