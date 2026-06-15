@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { useState } from "react";
 
 const STEPS = ["상담 종류 선택", "상담 방식 선택", "일정 선택", "정보 입력", "예약 완료"];
@@ -48,6 +49,7 @@ export default function BookingForm() {
     gender: "",
     note: "",
   });
+  const [agreed, setAgreed] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitError, setSubmitError] = useState("");
 
@@ -76,7 +78,7 @@ export default function BookingForm() {
     if (step === 0) return !!form.type;
     if (step === 1) return !!form.method;
     if (step === 2) return !!form.date && !!form.time && getDateType(form.date) !== "closed";
-    if (step === 3) return !!form.name && !!form.phone && !!form.birthDate;
+    if (step === 3) return !!form.name && !!form.phone && !!form.birthDate && agreed;
     return true;
   };
 
@@ -261,6 +263,33 @@ export default function BookingForm() {
                   rows={4}
                   className="border border-[#e8e8e8] px-4 py-3 text-[14px] text-[#333] w-full focus:outline-none focus:border-[#1B2B4B] placeholder:text-[#bbb] resize-none"
                 />
+              </div>
+
+              {/* 약관 동의 */}
+              <div className="border-t border-[#e8e8e8] pt-5">
+                <label className="flex items-start gap-3 cursor-pointer group">
+                  <div className="relative mt-0.5 shrink-0">
+                    <input
+                      type="checkbox"
+                      checked={agreed}
+                      onChange={(e) => setAgreed(e.target.checked)}
+                      className="sr-only"
+                    />
+                    <div className={`w-5 h-5 border-2 rounded flex items-center justify-center transition-colors ${agreed ? "bg-[#1B2B4B] border-[#1B2B4B]" : "border-[#ccc] group-hover:border-[#1B2B4B]/50"}`}>
+                      {agreed && (
+                        <svg width="11" height="11" viewBox="0 0 11 11" fill="none">
+                          <path d="M2 5.5l2.5 2.5 4.5-4.5" stroke="white" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
+                        </svg>
+                      )}
+                    </div>
+                  </div>
+                  <span className="text-[13px] text-[#555] leading-snug">
+                    <Link href="/privacy" target="_blank" className="text-[#1B2B4B] font-semibold underline underline-offset-2 hover:text-[#C9A84C] transition-colors">개인정보처리방침</Link>
+                    {" 및 "}
+                    <Link href="/terms" target="_blank" className="text-[#1B2B4B] font-semibold underline underline-offset-2 hover:text-[#C9A84C] transition-colors">이용약관</Link>
+                    에 동의합니다. <span className="text-red-400">*</span>
+                  </span>
+                </label>
               </div>
             </div>
           </div>
