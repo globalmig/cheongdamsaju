@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Noto_Serif_KR, Noto_Sans_KR } from "next/font/google";
 import "./globals.css";
+import MobileFloatButtons from "@/components/MobileFloatButtons";
 
 const notoSerifKR = Noto_Serif_KR({
   weight: ["400", "500", "600", "700"],
@@ -41,7 +42,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ko" className={`h-full ${notoSerifKR.variable} ${notoSansKR.variable}`}>
-      <body className="min-h-full flex flex-col">{children}</body>
+      <body className="min-h-full flex flex-col">
+        {children}
+        <MobileFloatButtons />
+      </body>
     </html>
   );
 }

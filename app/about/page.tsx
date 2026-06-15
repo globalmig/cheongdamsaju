@@ -21,29 +21,25 @@ const values = [
   {
     num: "01",
     title: "정통 명리학 기반",
-    highlight: "수십 년 전통의 정통 명리학을 기반으로",
-    desc: "사주팔자의 구조와 흐름을 정밀하게 분석합니다.",
+    desc: "수십 년 전통의 정통 명리학을 기반으로 사주팔자의 구조와 흐름을 정밀하게 분석합니다.",
     icon: <BookOpen size={80} strokeWidth={1.8} />,
   },
   {
     num: "02",
     title: "현실적인 방향 제시",
-    highlight: "단순한 운세풀이가 아닌, 실생활에 적용할 수 있는",
-    desc: "현실적인 방향과 선택의 지혜를 제시합니다.",
+    desc: "단순한 운세풀이가 아닌, 실생활에 적용할 수 있는 현실적인 방향과 선택의 지혜를 제시합니다.",
     icon: <Compass size={80} strokeWidth={1.8} />,
   },
   {
     num: "03",
     title: "개인 맞춤 상담",
-    highlight: "사주팔자의 구조를 바탕으로",
-    desc: "개인의 상황과 목표에 맞춤화된 1:1 상담을 진행합니다.",
+    desc: "사주팔자의 구조를 바탕으로 개인의 상황과 목표에 맞춤화된 1:1 상담을 진행합니다.",
     icon: <UserCheck size={80} strokeWidth={1.8} />,
   },
   {
     num: "04",
     title: "신뢰와 정성",
-    highlight: "한 분 한 분 정성스럽게,",
-    desc: "비밀이 철저히 보장되는 신뢰할 수 있는 상담 환경을 제공합니다.",
+    desc: "한 분 한 분 정성스럽게, 비밀이 철저히 보장되는 신뢰할 수 있는 상담 환경을 제공합니다.",
     icon: <ShieldCheck size={80} strokeWidth={1.8} />,
   },
 ];
@@ -69,11 +65,11 @@ export default function AboutPage() {
             </h1>
             <p className="text-[15px] text-[#888] mb-14 text-center">삶의 흐름을 함께 보는 정통 상담공간</p>
 
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 w-full max-w-[1440px] border-b pb-12 md:pb-20 border-[#e8e8e8]">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12 w-full max-w-[1440px] border-b pb-12 md:pb-20 border-[#e8e8e8]">
               {features.map((f) => (
-                <div key={f.label} className="flex flex-col items-center gap-1">
-                  <div className="w-20 h-20 rounded-2xl  flex items-center justify-center  transition-colors">{f.icon}</div>
-                  <span className="text-[12px] text-[#444] font-medium text-center leading-snug w-16">{f.label}</span>
+                <div key={f.label} className="flex flex-col items-center gap-3">
+                  <div className="w-20 h-20 rounded-2xl flex items-center justify-center">{f.icon}</div>
+                  <span className="text-[13px] text-[#444] font-medium text-center leading-snug">{f.label}</span>
                 </div>
               ))}
             </div>
@@ -89,18 +85,20 @@ export default function AboutPage() {
               <h2 className="text-[22px] md:text-[24px] font-bold text-[#1B2B4B] mb-6 md:mb-10" style={{ fontFamily: "'Noto Serif KR', serif" }}>
                 인사말
               </h2>
-              <p className="text-[15px] text-[#333] leading-relaxed mb-5" style={{ fontFamily: "'Noto Serif KR', serif" }}>
+              <p className="text-[15px] text-[#333] leading-[1.9] mb-6" style={{ fontFamily: "'Noto Serif KR', serif" }}>
                 안녕하세요. 청담사주작명원입니다.
               </p>
-              <p className="text-[14px] text-[#555] leading-relaxed mb-5">사람의 삶에는 누구에게나 중요한 선택의 순간이 찾아옵니다. 그 선택의 방향에 따라 인생의 흐름은 크게 달라지기도 합니다.</p>
-              <p className="text-[14px] text-[#555] leading-relaxed mb-5">
+              <p className="text-[14px] text-[#555] leading-[1.9] mb-6">사람의 삶에는 누구에게나 중요한 선택의 순간이 찾아옵니다. 그 선택의 방향에 따라 인생의 흐름은 크게 달라지기도 합니다.</p>
+              <p className="text-[14px] text-[#555] leading-[1.9] mb-6">
                 저희는 사주를 통해 단순히 미래를 단정짓기보다는, 현재의 흐름을 이해하고 보다 나은 방향을 선택하실 수 있도록 돕는 것을 가장 중요하게 생각합니다.
               </p>
-              <p className="text-[14px] text-[#555] leading-relaxed mb-5">인생의 고민은 누구에게나 있습니다. 혼자 고민하기 어려운 문제일수록, 함께 풀어가는 과정이 필요하다고 믿습니다.</p>
-              <p className="text-[14px] text-[#555] leading-relaxed mb-8">찾아주시는 모든 분들이 조금이라도 편안한 마음과 명확한 방향을 얻어가실 수 있도록 항상 정성을 다해 상담드리겠습니다.</p>
-              <p className="text-[14px] font-medium text-[#1B2B4B]" style={{ fontFamily: "'Noto Serif KR', serif" }}>
-                감사합니다.
-              </p>
+              <p className="text-[14px] text-[#555] leading-[1.9] mb-6">인생의 고민은 누구에게나 있습니다. 혼자 고민하기 어려운 문제일수록, 함께 풀어가는 과정이 필요하다고 믿습니다.</p>
+              <p className="text-[14px] text-[#555] leading-[1.9]">찾아주시는 모든 분들이 조금이라도 편안한 마음과 명확한 방향을 얻어가실 수 있도록 항상 정성을 다해 상담드리겠습니다.</p>
+              <div className="border-t border-[#e8e8e8] mt-8 pt-6">
+                <p className="text-[14px] font-medium text-[#1B2B4B]" style={{ fontFamily: "'Noto Serif KR', serif" }}>
+                  감사합니다.
+                </p>
+              </div>
             </div>
 
             {/* Image */}
@@ -123,21 +121,24 @@ export default function AboutPage() {
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
               {values.map((v) => (
-                <div key={v.num} className="relative bg-white rounded-2xl px-8 py-8 shadow-sm border border-[#eeeeee] flex flex-col gap-4 overflow-hidden">
+                <div key={v.num} className="relative bg-white rounded-2xl px-8 py-8 shadow-sm border border-[#eeeeee] overflow-hidden">
                   {/* 장식 아이콘 */}
-                  <div className="absolute bottom-4 right-4 text-[#1B2B4B]/6">
+                  <div className="absolute bottom-4 right-4 text-[#1B2B4B]/5">
                     {v.icon}
                   </div>
-                  <div className="w-9 h-9 rounded-full bg-[#1B2B4B] flex items-center justify-center shrink-0">
-                    <span className="text-[11px] font-bold text-white tracking-wide">{v.num}</span>
-                  </div>
-                  <div>
-                    <h3 className="text-[18px] font-bold text-[#1B2B4B] mb-3" style={{ fontFamily: "'Noto Serif KR', serif" }}>
+                  {/* 번호 + 제목 */}
+                  <div className="flex items-center gap-3 mb-5">
+                    <div className="w-8 h-8 rounded-full bg-[#1B2B4B] flex items-center justify-center shrink-0">
+                      <span className="text-[10px] font-bold text-white tracking-wide">{v.num}</span>
+                    </div>
+                    <h3 className="text-[17px] font-bold text-[#1B2B4B]" style={{ fontFamily: "'Noto Serif KR', serif" }}>
                       {v.title}
                     </h3>
-                    <p className="text-[13.5px] text-[#555] leading-relaxed">{v.highlight}</p>
-                    <p className="text-[13px] text-[#999] leading-relaxed mt-1">{v.desc}</p>
                   </div>
+                  {/* 구분선 */}
+                  <div className="h-px bg-[#f0f0f0] mb-5" />
+                  {/* 설명 */}
+                  <p className="text-[13.5px] text-[#666] leading-[1.85]">{v.desc}</p>
                 </div>
               ))}
             </div>

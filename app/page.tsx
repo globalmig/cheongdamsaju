@@ -58,7 +58,7 @@ function Hero() {
   return (
     <section className="relative w-full min-h-[420px] md:min-h-140 overflow-hidden max-w-[2880px] mx-auto">
       {/* Full-section background image */}
-      <Image src="/images/ceo/사주_ceo3.png" alt="청담사주 작명원 원장" fill sizes="100vw" className="object-cover object-center" preload />
+      <Image src="/images/ceo/hero_main.webp" alt="청담사주 작명원 원장" fill sizes="100vw" quality={90} className="object-cover object-center" preload />
 
       {/* Mobile overlay for readability */}
       <div className="absolute inset-0 bg-white/80 md:hidden" />
