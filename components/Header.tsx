@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
@@ -82,13 +83,10 @@ export default function Header() {
             href="http://blog.naver.com/chungdamsaju"
             target="_blank"
             rel="noopener noreferrer"
-            title="블로그"
-            className="w-9 h-9 flex items-center justify-center text-[#666] hover:text-[#1B2B4B] hover:bg-[#f5f7fa] rounded-md transition-colors"
+            title="네이버 블로그"
+            className="w-9 h-9 flex items-center justify-center hover:bg-[#edfff5] rounded-xl transition-colors"
           >
-            <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
-              <rect x="2" y="2" width="14" height="14" rx="2" stroke="currentColor" strokeWidth="1.4" />
-              <path d="M5 6h8M5 9h8M5 12h5" stroke="currentColor" strokeWidth="1.3" strokeLinecap="round" />
-            </svg>
+            <Image src="/images/icon_blog.png" alt="네이버 블로그" width={20} height={20} />
           </a>
           <button
             onClick={() => alert("준비중입니다.")}
@@ -96,8 +94,8 @@ export default function Header() {
             className="w-9 h-9 flex items-center justify-center text-[#666] hover:text-[#FF0000] hover:bg-[#fff5f5] rounded-md transition-colors"
           >
             <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-              <rect x="1" y="5" width="18" height="10" rx="3" fill="currentColor" />
-              <path d="M8.5 8l4 2.5-4 2.5V8z" fill="white" />
+              <rect x="1" y="1" width="18" height="18" rx="3" fill="currentColor" />
+              <path d="M8.5 7.5l4 2.5-4 2.5V7.5z" fill="white" />
             </svg>
           </button>
           <div className="w-px h-5 bg-[#e8e8e8] mx-1" />
