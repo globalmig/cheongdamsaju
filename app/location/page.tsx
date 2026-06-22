@@ -20,7 +20,7 @@ const transportInfo = [
         <path d="M6 6h8M6 9h8" stroke="#1B2B4B" strokeWidth="1.2" strokeLinecap="round" />
       </svg>
     ),
-    details: ["3호선(모노레일) 북구청역 하차 후 버스·택시 이용", "1호선 대구역 하차 후 버스 환승"],
+    details: ["3호선 북구청역 하차 후 오봉오거리 방향 도보 5분"],
   },
   {
     type: "버스",
@@ -45,7 +45,7 @@ const transportInfo = [
         <circle cx="14.5" cy="16" r="1.5" fill="#1B2B4B" />
       </svg>
     ),
-    details: ["내비 목적지: '침산태왕리더스' 또는 '침산남로 80' 검색", "건물 내 주차장 이용 / 인근 공영주차장 이용 가능"],
+    details: ["건물 상가 내 주차 가능", "주차장이 혼잡할 경우 아파트 주차장 이용 가능"],
   },
 ];
 
@@ -147,7 +147,7 @@ export default function LocationPage() {
                         </svg>
                       ),
                       label: "주차 안내",
-                      value: "건물 내 주차 가능\n(1시간 무료 제공)",
+                      value: "건물 상가 내 주차 가능\n주차장 혼잡 시 아파트 주차장 이용 가능",
                     },
                   ].map((item) => (
                     <div key={item.label} className="flex gap-3">
