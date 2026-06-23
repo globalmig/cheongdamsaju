@@ -33,6 +33,11 @@ export const metadata: Metadata = {
     description: "사주팔자를 바탕으로 인생의 흐름을 분석하고, 더 나은 선택과 방향을 함께 제시해드립니다.",
     images: ["/og-image.png"],
   },
+  verification: {
+    other: {
+      "naver-site-verification": "5fb6340e5341ec8d5f0fb4e0db5a2915bb372edf",
+    },
+  },
 };
 
 export default function RootLayout({
