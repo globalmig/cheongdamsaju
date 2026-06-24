@@ -84,7 +84,24 @@ export const faqData = [
 ];
 
 export default function FaqPage() {
+  const faqJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: faqData.flatMap((cat) =>
+      cat.items.map((item) => ({
+        "@type": "Question",
+        name: item.q,
+        acceptedAnswer: { "@type": "Answer", text: item.a },
+      }))
+    ),
+  };
+
   return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
+      />
     <div className="flex flex-col min-h-screen">
       <Header />
       <main className="flex-1">
@@ -133,5 +150,6 @@ export default function FaqPage() {
       </main>
       <Footer />
     </div>
+    </>
   );
 }

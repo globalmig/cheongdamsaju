@@ -1,4 +1,4 @@
-import ServiceDetail, { buildMetadata, type ServiceData } from "@/components/ServiceDetail";
+import ServiceDetail, { buildMetadata, buildServiceJsonLd, type ServiceData } from "@/components/ServiceDetail";
 
 const data: ServiceData = {
   title: "사주상담",
@@ -21,5 +21,11 @@ const data: ServiceData = {
 export const metadata = buildMetadata(data);
 
 export default function Page() {
-  return <ServiceDetail data={data} currentHref="/services/saju" />;
+  const jsonLd = buildServiceJsonLd(data, "/services/saju");
+  return (
+    <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
+      <ServiceDetail data={data} currentHref="/services/saju" />
+    </>
+  );
 }

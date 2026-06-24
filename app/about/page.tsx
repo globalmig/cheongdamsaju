@@ -45,7 +45,24 @@ const values = [
 ];
 
 export default function AboutPage() {
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "AboutPage",
+    name: "청담사주작명원 소개",
+    description: "청담사주작명원을 소개합니다. 정통 명리학 기반의 깊이 있는 사주·작명 상담을 제공합니다.",
+    url: "https://www.cheongdamsaju.co.kr/about",
+    mainEntity: {
+      "@type": "LocalBusiness",
+      name: "청담사주작명원",
+    },
+  };
+
   return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
     <div className="flex flex-col min-h-screen">
       <Header />
       <main className="flex-1">
@@ -182,5 +199,6 @@ export default function AboutPage() {
       </main>
       <Footer hideHoursBar />
     </div>
+    </>
   );
 }

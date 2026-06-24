@@ -19,6 +19,23 @@ export function buildMetadata(data: ServiceData): Metadata {
   };
 }
 
+export function buildServiceJsonLd(data: ServiceData, href: string) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    name: data.title,
+    description: data.description.join(" "),
+    provider: {
+      "@type": "LocalBusiness",
+      name: "청담사주작명원",
+      url: "https://www.cheongdamsaju.co.kr",
+    },
+    url: `https://www.cheongdamsaju.co.kr${href}`,
+    serviceType: data.title,
+    areaServed: { "@type": "Country", name: "KR" },
+  };
+}
+
 const allServices = [
   { title: "사주상담", href: "/services/saju" },
   { title: "궁합상담", href: "/services/gunghap" },
