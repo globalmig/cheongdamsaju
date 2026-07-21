@@ -2,25 +2,27 @@ export default function Footer({ hideHoursBar }: { hideHoursBar?: boolean }) {
   return (
     <footer className="w-full bg-[#1B2B4B] text-white border-t border-[#3a4f72]">
       {/* Top bar */}
-      {!hideHoursBar && <div className="w-full bg-white border-t border-[#e8e8e8]">
-        <div className="max-w-[1280px] mx-auto px-4 md:px-6 py-3 md:h-[64px] md:py-0 flex items-center">
-          <div className="flex items-start sm:items-center gap-3">
-            <div className="flex items-center justify-center w-8 h-8 rounded-full border border-[#1B2B4B] flex-shrink-0 mt-0.5 sm:mt-0">
-              <svg width="15" height="15" viewBox="0 0 15 15" fill="none">
-                <circle cx="7.5" cy="7.5" r="6.5" stroke="#1B2B4B" strokeWidth="1.2" />
-                <path d="M7.5 4v3.5l2.5 1.5" stroke="#1B2B4B" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round" />
-              </svg>
-            </div>
-            <div>
-              <span className="text-[12px] font-semibold text-[#1B2B4B] mr-2">상담 가능 시간</span>
-              <span className="text-[12px] text-[#555] block sm:inline">
-                평일 10:00~19:00 &nbsp;|&nbsp; 주말 11:00~17:00
-                <span className="text-[#888] ml-1">(일요일 휴무, 미리 예약 시 상담가능)</span>
-              </span>
+      {!hideHoursBar && (
+        <div className="w-full bg-white border-t border-[#e8e8e8]">
+          <div className="max-w-[1280px] mx-auto px-4 md:px-6 py-3 md:h-[64px] md:py-0 flex items-center">
+            <div className="flex items-start sm:items-center gap-3">
+              <div className="flex items-center justify-center w-8 h-8 rounded-full border border-[#1B2B4B] flex-shrink-0 mt-0.5 sm:mt-0">
+                <svg width="15" height="15" viewBox="0 0 15 15" fill="none">
+                  <circle cx="7.5" cy="7.5" r="6.5" stroke="#1B2B4B" strokeWidth="1.2" />
+                  <path d="M7.5 4v3.5l2.5 1.5" stroke="#1B2B4B" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round" />
+                </svg>
+              </div>
+              <div>
+                <span className="text-[12px] font-semibold text-[#1B2B4B] mr-2">상담 가능 시간</span>
+                <span className="text-[12px] text-[#555] block sm:inline">
+                  평일 10:00~19:00 &nbsp;|&nbsp; 주말 11:00~17:00
+                  <span className="text-[#888] ml-1">(일요일 휴무, 미리 예약 시 상담가능)</span>
+                </span>
+              </div>
             </div>
           </div>
         </div>
-      </div>}
+      )}
 
       {/* Main footer */}
       <div className="max-w-[1280px] mx-auto px-6 py-12">
@@ -42,6 +44,15 @@ export default function Footer({ hideHoursBar }: { hideHoursBar?: boolean }) {
                 대구광역시 북구 침산남로 80
                 <br />
                 상가동 2층 213호
+              </p>
+            </div>
+
+            <div>
+              <p className="text-[11px] text-white/40 uppercase tracking-widest mb-1">Contact</p>
+              <p className="text-[13px] text-white/75 leading-relaxed">
+                연락처 : 010-3816-3231
+                <br />
+                이메일 : ghj2454@naver.com
               </p>
             </div>
             <div>

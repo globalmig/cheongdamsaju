@@ -11,11 +11,17 @@ export default function MobileFloatButtons() {
   const [tip, setTip] = useState<"" | "show" | "copied">("");
 
   function handlePhoneClick(e: React.MouseEvent) {
-    // 터치 기기(모바일)는 tel: 링크 그대로 동작
-    if (window.matchMedia("(hover: none)").matches) return;
+    // 카카오톡/네이버 등 인앱 브라우저는 (hover: none) 판별이 부정확할 수 있어
+    // 터치 지원 여부(ontouchstart/maxTouchPoints)로 기기 판별
+    const isTouchDevice =
+      "ontouchstart" in window || navigator.maxTouchPoints > 0;
 
-    // PC: tel: 링크 막고 번호 복사 + 툴팁
-    e.preventDefault();
+    // PC는 tel: 이동이 의미 없으니 막고, 모바일은 전화 걸기 화면으로 그대로 이동
+    if (!isTouchDevice) {
+      e.preventDefault();
+    }
+
+    // 번호 복사는 기기와 상관없이 항상 실행
     navigator.clipboard
       .writeText(PHONE)
       .then(() => setTip("copied"))
@@ -24,7 +30,7 @@ export default function MobileFloatButtons() {
   }
 
   return (
-    <div className="fixed bottom-6 right-4 z-40 flex flex-col gap-3 lg:hidden">
+    <div className="fixed bottom-6 right-4 z-40 flex flex-col gap-3 ">
       {/* 예약/문의 */}
       <Link
         href="/booking"
@@ -42,7 +48,7 @@ export default function MobileFloatButtons() {
 
       {/* 카카오톡 */}
       <a
-        href={KAKAO_URL}
+        href={"https://pf.kakao.com/_xeVafX"}
         target="_blank"
         rel="noopener noreferrer"
         aria-label="카카오톡 문의"
