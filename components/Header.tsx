@@ -80,6 +80,17 @@ export default function Header() {
         {/* Right buttons */}
         <div className="hidden lg:flex items-center gap-2 flex-shrink-0">
           <a
+            href="tel:01038163231"
+            title="전화 문의"
+            className="flex items-center gap-1.5 px-3 py-[9px] text-[13.5px] font-medium text-[#2d3748] hover:text-[#1B2B4B] transition-colors"
+          >
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.95 9.81a19.79 19.79 0 01-3.07-8.67A2 2 0 012.86 1h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L7.09 8.64a16 16 0 006.29 6.29l1.56-1.56a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z" />
+            </svg>
+            010-3816-3231
+          </a>
+          <div className="w-px h-5 bg-[#e8e8e8] mx-1" />
+          <a
             href="http://blog.naver.com/chungdamsaju"
             target="_blank"
             rel="noopener noreferrer"

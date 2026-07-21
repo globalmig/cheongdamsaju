@@ -26,7 +26,7 @@ export default function Footer({ hideHoursBar }: { hideHoursBar?: boolean }) {
 
       {/* Main footer */}
       <div className="max-w-[1280px] mx-auto px-6 py-12">
-        <div className="flex flex-col lg:flex-row gap-10 lg:gap-0">
+        <div className="flex flex-col lg:flex-row lg:items-center gap-10 lg:gap-0">
           {/* Brand */}
           <div className="lg:w-[280px] flex-shrink-0">
             <p className="text-[24px] font-bold mb-1" style={{ fontFamily: "'Noto Serif KR', serif" }}>
@@ -66,11 +66,33 @@ export default function Footer({ hideHoursBar }: { hideHoursBar?: boolean }) {
               </p>
             </div>
           </div>
+
+          {/* Quick contact */}
+          <div className="flex-1 flex flex-col justify-center gap-4 lg:pl-16">
+            <a href="tel:01038163231" className="group flex items-center gap-3 text-white hover:text-[#C9A84C] transition-colors">
+              <span className="flex items-center justify-center w-10 h-10 rounded-full border border-white/20 group-hover:border-[#C9A84C] shrink-0 transition-colors">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.95 9.81a19.79 19.79 0 01-3.07-8.67A2 2 0 012.86 1h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L7.09 8.64a16 16 0 006.29 6.29l1.56-1.56a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z" />
+                </svg>
+              </span>
+              <span className="text-[20px] font-semibold tracking-wide">010-3816-3231</span>
+            </a>
+            <a href="mailto:ghj2454@naver.com" className="group flex items-center gap-3 text-white/80 hover:text-[#C9A84C] transition-colors">
+              <span className="flex items-center justify-center w-10 h-10 rounded-full border border-white/20 group-hover:border-[#C9A84C] shrink-0 transition-colors">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <rect x="2" y="4" width="20" height="16" rx="2" />
+                  <path d="M2 7l10 6 10-6" />
+                </svg>
+              </span>
+              <span className="text-[16px]">ghj2454@naver.com</span>
+            </a>
+          </div>
         </div>
 
         <div className="border-t border-white/10 mt-10 pt-6 flex flex-col gap-2">
           <p className="text-[11px] text-white/30 leading-relaxed">
-            상호: 청담사주작명원 &nbsp;|&nbsp; 대표: 정효근 &nbsp;|&nbsp; 사업장소재지: 대구광역시 북구 침산남로 80, 상가동 2층 213호 (침산동, 침산태왕리더스)
+            상호: 청담사주작명원 &nbsp;|&nbsp; 대표: 정효근 &nbsp;|&nbsp; 사업자등록번호: 692-21-02229 &nbsp;|&nbsp; 사업장소재지: 대구광역시 북구 침산남로 80, 상가동 2층 213호 (침산동,
+            침산태왕리더스)
           </p>
           <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3">
             <p className="text-[12px] text-white/35">© 2026 청담사주작명원. All rights reserved.</p>
