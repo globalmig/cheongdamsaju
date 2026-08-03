@@ -8,7 +8,7 @@ const METHOD_LABEL: Record<string, string> = {
 };
 
 export async function POST(req: NextRequest) {
-  const { name, phone, birthDate, gender, type, method, date, time, note } =
+  const { name, phone, birthDate, calendarType, birthTime, gender, type, method, date, time, note } =
     await req.json();
 
   if (!name || !phone || !birthDate || !type || !method || !date || !time) {
@@ -35,7 +35,8 @@ export async function POST(req: NextRequest) {
     `[청담사주] 새 예약 신청\n` +
     `성함: ${name}${gender ? ` (${gender})` : ""}\n` +
     `연락처: ${phone}\n` +
-    `생년월일: ${birthDate}\n` +
+    `생년월일: ${birthDate} (${calendarType || "양력"})\n` +
+    `태어난 시: ${birthTime || "모름"}\n` +
     `상담: ${type} / ${METHOD_LABEL[method] ?? method}\n` +
     `일시: ${date} ${time}` +
     (note ? `\n메모: ${note}` : "");

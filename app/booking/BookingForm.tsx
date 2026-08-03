@@ -32,6 +32,8 @@ type FormData = {
   name: string;
   phone: string;
   birthDate: string;
+  calendarType: string;
+  birthTime: string;
   gender: string;
   note: string;
 };
@@ -46,6 +48,8 @@ export default function BookingForm() {
     name: "",
     phone: "",
     birthDate: "",
+    calendarType: "양력",
+    birthTime: "",
     gender: "",
     note: "",
   });
@@ -229,12 +233,38 @@ export default function BookingForm() {
                 />
               </div>
               <div>
-                <label className="block text-[13px] font-semibold text-[#333] mb-2">생년월일 *</label>
+                <div className="flex items-center justify-between mb-2">
+                  <label className="block text-[13px] font-semibold text-[#333]">생년월일 *</label>
+                  <div className="flex gap-1">
+                    {["양력", "음력"].map((c) => (
+                      <button
+                        key={c}
+                        type="button"
+                        onClick={() => set("calendarType", c)}
+                        className={`px-3 py-1 border text-[12px] font-medium transition-colors ${
+                          form.calendarType === c ? "border-[#1B2B4B] bg-[#1B2B4B] text-white" : "border-[#e8e8e8] text-[#666] hover:border-[#1B2B4B]/40"
+                        }`}
+                      >
+                        {c}
+                      </button>
+                    ))}
+                  </div>
+                </div>
                 <input
                   type="text"
                   value={form.birthDate}
                   onChange={(e) => set("birthDate", e.target.value)}
                   placeholder="예: 1990-01-01"
+                  className="border border-[#e8e8e8] px-4 py-3 text-[14px] text-[#333] w-full focus:outline-none focus:border-[#1B2B4B] placeholder:text-[#bbb]"
+                />
+              </div>
+              <div>
+                <label className="block text-[13px] font-semibold text-[#333] mb-2">태어난 시 (선택)</label>
+                <input
+                  type="text"
+                  value={form.birthTime}
+                  onChange={(e) => set("birthTime", e.target.value)}
+                  placeholder="예: 14:30 또는 모름"
                   className="border border-[#e8e8e8] px-4 py-3 text-[14px] text-[#333] w-full focus:outline-none focus:border-[#1B2B4B] placeholder:text-[#bbb]"
                 />
               </div>
@@ -317,6 +347,8 @@ export default function BookingForm() {
                   { label: "예약 일시", value: `${form.date} ${form.time}` },
                   { label: "성함", value: form.name },
                   { label: "연락처", value: form.phone },
+                  { label: "생년월일", value: `${form.birthDate} (${form.calendarType})` },
+                  { label: "태어난 시", value: form.birthTime || "모름" },
                 ].map((row) => (
                   <div key={row.label} className="flex gap-4">
                     <span className="text-[12px] text-[#888] w-[70px] flex-shrink-0">{row.label}</span>
